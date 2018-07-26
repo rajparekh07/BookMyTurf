@@ -1,0 +1,23 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+
+@import "node_modules/materialize-css/bin/materialize";
+
+//Notie
+@import "node_modules/notie/dist/notie.min";
+
+//NProgress
+@import "node_modules/nprogress/nprogress";
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
