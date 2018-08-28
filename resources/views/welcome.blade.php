@@ -5,10 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Book My Turf</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/vegas/vegas.min.css">
+
 
         <!-- Styles -->
         <style>
@@ -91,4 +93,18 @@
             </div>
         </div>
     </body>
+    {{--<script src="http://zeptojs.com/zepto.min.js"></script>--}}
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="/vegas/vegas.min.js"></script>
+    <script>
+        $(document).ready(() => {
+            console.log("test");
+            $("body").vegas({
+                slides: [
+                    { src: "/images/download.jpeg" },
+                    { src: "/images/2.jpeg" },
+                ]
+            });
+        })
+    </script>
 </html>
