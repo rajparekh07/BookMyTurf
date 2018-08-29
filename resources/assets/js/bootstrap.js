@@ -9,6 +9,9 @@ window.Vue = Vue;
 window.Vue.use(VeeValidate, { fieldsBagName: 'formFields'} );
 
 window.axios = Axios;
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify);
 
 window.axios.defaults.headers.common = {
     'X-Requested-With': 'XMLHttpRequest',
