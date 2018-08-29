@@ -10,7 +10,17 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
+                        <h4>Social Login</h4>
+                        <div class="form-group row">
+                            <div class="col-md-8 offset-md-4">
+                                <a class="btn btn-link red-text" href="redirect/google">Login in with Google</a>
 
+
+                            </div>
+
+                        </div>
+
+                        <hr>
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -51,7 +61,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group row">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
@@ -60,8 +70,11 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
+
+
                             </div>
                         </div>
+
                     </form>
                 </div>
             </div>
