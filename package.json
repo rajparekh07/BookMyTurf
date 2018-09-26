@@ -11,8 +11,6 @@
     },
     "devDependencies": {
         "axios": "^0.18",
-        "bootstrap": "^4.0.0",
-        "popper.js": "^1.12",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
@@ -23,7 +21,6 @@
     "dependencies": {
       "notie": "^4.3.0",
       "nprogress": "^0.2.0",
-      "materialize-css": "^0.98.2",
       "vee-validate": "^2.0.0-beta.22",
       "vuetable2-bootstrap": "0.1.2"
     }
