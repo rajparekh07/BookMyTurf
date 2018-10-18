@@ -1,7 +1,73 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <div class="container">
+        <div class="row" style="margin-bottom: 0">
+            <div class="col s12 offset-m2 offset-m8 offset-l1 l5">
+                @include('partials.register')
+            </div>
+            <div class="col s12 offset-m2 offset-m8 offset-l1 l5">
+                @include('partials.login')
+            </div>
+        </div>
+    </div>
+{{--
+    <v-container grid-list-md text-xs-center>
+        <v-layout row wrap align-center justify-space-around >
+            <v-flex xs5>
+                <v-card
+                        class="flex"
+                        dark
+                        tile
+                >
+                    <v-card-title primary-title>
+                        <div class="headline">Login</div>
+
+                    </v-card-title>
+
+                    <v-card-title>
+                        <v-form v-model="valid" class="flex">
+                            <v-text-field
+                                    v-model="name"
+                                    :rules="nameRules"
+                                    :counter="10"
+                                    label="Name"
+                                    required
+                            ></v-text-field>
+                            <v-text-field
+                                    v-model="email"
+                                    :rules="emailRules"
+                                    label="E-mail"
+                                    required
+                            ></v-text-field>
+                        </v-form>
+                    </v-card-title>
+
+                    <v-card-actions class="justify-end">
+                        <v-btn flat color="blue">Submit</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-flex>
+            <v-flex xs5>
+                <v-card
+                        class="flex"
+                        dark
+                        tile
+                >
+                    <v-card-title>
+                        <strong class="headline">Register</strong>
+
+                    </v-card-title>
+
+                    <v-card-actions class="justify-end">
+                        <v-btn flat color="blue">Submit</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-flex>
+        </v-layout>
+    </v-container>--}}
+
+{{--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -73,5 +139,9 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
+@endsection
+
+@section('scripts')
+
 @endsection
