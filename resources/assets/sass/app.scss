@@ -35,18 +35,28 @@ html {
   min-height: 100vh;
 
 }
-body {
+body:not(.search) {
   font-family: Roboto, sans-serif !important;
+  color: white;
+  background: repeating-linear-gradient(
+                  -55deg,
+                  #222,
+                  #222 10px,
+                  #333 10px,
+                  #333 20px
+  );
 }
 
 .main {
-    background: url('/assets/background.jpg') no-repeat;
-    background-size: cover;
+    //background: url('/assets/background.jpg') no-repeat;
+    //background-size: cover;
+
 
 }
 
 .nav-name {
   padding: 25px;
+  font-weight: 100;
   font-size: 30px;
 }
 
@@ -59,6 +69,7 @@ nav ul a:hover {
   padding: 5px;
 }
 
+
 /* Change the white to any color ;) */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -67,14 +78,29 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 300px #424242 inset;
+  -webkit-box-shadow: 0 0 0 300px #424242 inset !important;
   -webkit-text-fill-color: white !important;
 }
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 300px #424242 inset;
+  -webkit-box-shadow: 0 0 0 300px #424242 inset !important;
   -webkit-text-fill-color: white !important;
 }
 
-.select-dropdown {
-   color: #FFF;
+.select-dropdown, .validate, .prefix.active {
+   color: #FFF !important;
  }
+input:focus:not(.search), .validate:focus:not(.search) {
+  color: #FFF;
+  border-bottom-color: #FFF !important;
+  -webkit-box-shadow: 0 1px 0 0 #FFF !important;
+  box-shadow: 0 1px 0 0 #FFF !important;
+}
+
+
+.pointer {
+  cursor: pointer;
+}
+
+.pagination li a {
+  color: #FFF;
+}

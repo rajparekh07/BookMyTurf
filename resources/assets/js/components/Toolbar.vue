@@ -9,11 +9,14 @@
                  key="normal"
             >
                 <a href="#" class="nav-name">{{ name }}</a>
+
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <a href="#" @click="setSearching(true)"  class="right sidenav-trigger hide-on-large-up"><i class="material-icons">search</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li @click="setSearching(true)">
                         <a>Search</a>
                     </li>
-                    <li v-if="!auth"><a>Get Started</a></li>
+                    <li v-if="!auth"><a :href="getstartedurl">Get Started</a></li>
                     <li v-else>{{ auth.name }}</li>
                 </ul>
             </div>
@@ -23,16 +26,21 @@
             >
                 <form>
                     <div class="input-field">
-                        <input id="search" type="search" autofocus placeholder="Search" required>
-                        <label class="label-icon " for="search"><i class="material-icons grey-text">search</i></label>
-                        <i class="material-icons black-text" @click="setSearching(false)">close</i>
+                        <input id="search" class="black-text" type="search" v-model="searchQuery" autofocus placeholder="Search" required>
+                        <label class="label-icon " for="search"  @click="setSearching(false)"><i class="material-icons grey-text">close</i></label>
+                        <i class="material-icons black-text" @keyup.enter="search()" @click="search()">send</i>
                     </div>
                 </form>
 
             </div>
         </transition>
+        <ul class="sidenav" id="mobile-demo">
 
+            <li v-if="!auth"><a>Get Started</a></li>
+            <li v-else>{{ auth.name }}</li>
+        </ul>
     </nav>
+
     <!--<v-toolbar
         dark
         class="black"
@@ -85,10 +93,13 @@
             isSearching : false,
             searchQuery : '',
         }),
-        props : ['name', 'auth'],
+        props : ['name', 'auth', 'getstartedurl', 'searchurl'],
         methods : {
             setSearching (enabled) {
                 this.isSearching = enabled
+            },
+            search() {
+                window.location.href = this.searchurl + '?filter=' + this.searchQuery
             }
         }
     }

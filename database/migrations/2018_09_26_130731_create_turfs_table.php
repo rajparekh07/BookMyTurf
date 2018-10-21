@@ -40,6 +40,8 @@ class CreateTurfsTable extends Migration
                 ->onUpdate('cascade');
             $table->string('facility');
             $table->string('value');
+            $table->timestamps();
+
 
         });
 
@@ -52,6 +54,8 @@ class CreateTurfsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->string('image_path');
+            $table->timestamps();
+
         });
 
     }

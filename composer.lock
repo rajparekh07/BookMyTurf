@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d21d0c0a31356a6612cb71ea3ac44ea9",
+    "content-hash": "43835c2d7be8a5cfcfd8f0d61c4ca8c9",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -1869,6 +1869,68 @@
                 "mailer"
             ],
             "time": "2018-07-13T07:04:35+00:00"
+        },
+        {
+            "name": "swisnl/laravel-fulltext",
+            "version": "0.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swisnl/laravel-fulltext.git",
+                "reference": "542f53a2bec9fbab42fc6856247da37b8f428e11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swisnl/laravel-fulltext/zipball/542f53a2bec9fbab42fc6856247da37b8f428e11",
+                "reference": "542f53a2bec9fbab42fc6856247da37b8f428e11",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.1,<5.8",
+                "illuminate/contracts": "^5.1,<5.8",
+                "illuminate/database": "^5.1,<5.8",
+                "illuminate/support": "^5.1,<5.8",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.1",
+                "squizlabs/php_codesniffer": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Swis\\LaravelFulltext\\FulltextServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Swis\\LaravelFulltext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Björn Brala",
+                    "email": "bbrala@swis.nl",
+                    "homepage": "https://www.swis.nl/over-ons/bjorn-brala",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Fulltext indexing and searching for Laravel",
+            "homepage": "https://github.com/swisnl/laravel-fulltext",
+            "keywords": [
+                "laravel-fulltext",
+                "swisnl"
+            ],
+            "time": "2018-09-21T15:29:17+00:00"
         },
         {
             "name": "symfony/console",

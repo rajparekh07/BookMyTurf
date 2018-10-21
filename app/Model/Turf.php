@@ -3,9 +3,17 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
+use Swis\LaravelFulltext\Indexable;
 
 class Turf extends Model
 {
+
+    use Indexable;
+
+    protected $indexContentColumns = ['facilities.value', 'facilities.facility'];
+
+    protected $indexTitleColumns = ['name', 'price', 'footwear', 'address'];
+
     protected $table = 'turfs';
 
     public function facilities()

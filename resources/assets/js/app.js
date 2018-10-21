@@ -9,8 +9,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+
 import Footer from './components/Footer.vue'
 import Toolbar from './components/Toolbar.vue'
+
+import Turfs from './components/Turfs/Container.vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -18,9 +22,12 @@ import Toolbar from './components/Toolbar.vue'
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('my-vuetable', require('./components/utils/vuetable/components/MyVuetable.vue'));
+Vue.component('upload-image-modal', require('./components/utils/modals/ImageUploadModal.vue'));
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('foot', Footer);
 Vue.component('toolbar', Toolbar);
+Vue.component('turfs', Turfs);
 
 const app = new Vue({
     el: '#app'

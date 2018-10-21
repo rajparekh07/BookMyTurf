@@ -10,7 +10,8 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "^1.0",
-        "laravolt/avatar": "^2.0"
+        "laravolt/avatar": "^2.0",
+        "swisnl/laravel-fulltext": "^0.14.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -26,7 +27,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Turfasap\\": "turfasap/"
+            "Turfasap\\": "turfasap/",
+            "Kyros\\": "kyros/"
         }
     },
     "autoload-dev": {

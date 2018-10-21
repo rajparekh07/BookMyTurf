@@ -23,6 +23,8 @@
         <toolbar
             name="{{ env('APP_NAME') }}"
             auth="{!! Auth::user() !!}"
+            getstartedurl="{{ route('getstarted') }}"
+            searchurl="{{ route('turfs') }}"
         >
 
         </toolbar>

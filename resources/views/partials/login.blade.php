@@ -1,4 +1,6 @@
 <div class="card grey darken-3 white-text">
+    <form action="{{ route("login") }}" method="post">
+        {{ csrf_field() }}
     <div class="card-content">
         <span class="card-title"> Login </span>
         <hr>
@@ -15,8 +17,9 @@
 
     </div>
     <div class="card-action right-align">
-        <div class="btn btn-primary blue ">Submit</div>
+        <button type="submit" class="btn btn-primary blue ">Submit</button>
     </div>
+    </form>
 </div>
 <br>
 <div class="card grey darken-3 white-text">
@@ -25,7 +28,7 @@
         <hr>
         <div class="row" style="margin-bottom: 0">
             <div class="input-field col s12">
-                <button class="btn btn-primary red" style="width: 100%"> Login Via Google </button>
+                <a href="redirect/google" class="btn btn-primary red" style="width: 100%"> Login Via Google </a>
             </div>
         </div>
 

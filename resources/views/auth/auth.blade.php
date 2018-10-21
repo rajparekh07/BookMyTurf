@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="row" style="margin-bottom: 0">
-            <div class="col s12 offset-m2 offset-m8 offset-l1 l5">
+            <div class="col s12 offset-m2 offset-m8 offset-l0 l5">
                 @include('partials.register')
             </div>
-            <div class="col s12 offset-m2 offset-m8 offset-l1 l5">
+            <div class="col s12 offset-m2 offset-m8 offset-l2 l5">
                 @include('partials.login')
             </div>
         </div>
