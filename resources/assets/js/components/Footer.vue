@@ -60,7 +60,7 @@
         <div class="footer-copyright black">
             <div class="container">
                 © {{ year }} {{ name }}
-                <a class="grey-text text-lighten-4 right" href="#!">Learn More About Us</a>
+                <a target="_blank" class="grey-text text-lighten-4 right" href="https://docs.google.com/forms/d/e/1FAIpQLSfue93imI5WgVafPA-FCdhA0CYt8jHVngLe8Pd6WwHJnzXdgw/viewform?usp=sf_link">Feedback About Us</a>
             </div>
         </div>
     </footer>

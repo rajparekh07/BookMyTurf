@@ -197,6 +197,7 @@
                             <v-icon class="red--text">favorite</v-icon>
                             by <a class="white--text" href="https://vuetifyjs.com" target="_blank">Raj Parekh Inc</a>
                             and <a class="white--text" href="https://github.com/vwxyzjn">Turf ASAP Team</a>
+                            and <a target="_blank" class="grey-text text-lighten-4 right" href="https://docs.google.com/forms/d/e/1FAIpQLSfue93imI5WgVafPA-FCdhA0CYt8jHVngLe8Pd6WwHJnzXdgw/viewform?usp=sf_link">Feedback About Us</a>
                         </div>
                     </v-flex>
                 </v-layout>
