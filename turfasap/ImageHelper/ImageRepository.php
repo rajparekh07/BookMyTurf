@@ -23,6 +23,7 @@ class ImageRepository {
     public function getImageFromPath($path) {
         $path = storage_path($path);
         if (file_exists($path)) {
+
             return $path;
         }
 

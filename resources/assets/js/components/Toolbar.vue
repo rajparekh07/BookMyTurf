@@ -17,7 +17,9 @@
                         <a>Search</a>
                     </li>
                     <li v-if="!auth"><a :href="getstartedurl">Get Started</a></li>
-                    <li v-else>{{ auth.name }}</li>
+                    <li v-if="auth"><a href="/home">{{ auth.name }}</a></li>
+                    <li v-if="auth"><a href="/logout">Logout</a></li>
+
                 </ul>
             </div>
             <div class="nav-wrapper white"
@@ -37,7 +39,8 @@
         <ul class="sidenav" id="mobile-demo">
 
             <li v-if="!auth"><a>Get Started</a></li>
-            <li v-else>{{ auth.name }}</li>
+            <li v-if="auth"><a href="/home">{{ auth.name }}</a></li>
+            <li v-if="auth"><a href="/logout">Logout</a></li>
         </ul>
     </nav>
 

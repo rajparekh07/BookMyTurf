@@ -12,9 +12,28 @@ class Turf extends Model
 
     protected $indexContentColumns = ['facilities.value', 'facilities.facility'];
 
-    protected $indexTitleColumns = ['name', 'price', 'footwear', 'address'];
+    protected $indexTitleColumns = ['name', 'price', 'footwear', 'address', 'type'];
 
     protected $table = 'turfs';
+
+    protected $appends = ['all_images_url', 'permalink', 'average_ratings'];
+
+    public function getAllImagesUrlAttribute () {
+        return $this->images->map(function ($image) {
+            return route('ajax-turf-image-id', $image->id);
+        });
+    }
+
+    public function getPermalinkAttribute () {
+        return route('permalink', $this->id);
+    }
+
+    public function getAverageRatingsAttribute () {
+        $ratings = $this->ratings->map(function ($rate) {
+            return $rate->stars;
+        });
+        return $ratings->average();
+    }
 
     public function facilities()
     {
@@ -24,5 +43,14 @@ class Turf extends Model
     public function images()
     {
         return $this->hasMany('App\Model\TurfImage');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function ratings() {
+        return $this->hasMany('App\Model\Rating');
     }
 }

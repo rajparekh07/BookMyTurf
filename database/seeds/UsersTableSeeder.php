@@ -57,7 +57,8 @@ class UsersTableSeeder extends Seeder
             $role = Role::where("name", $user["role"])->get()->first();
             $model->role_id = $role->id;
             $model->password = bcrypt($user["password"]);
-            $model->verified = 1;
+            $model->phone = 9999999999;
+            $model->verified = 0;
             $model->image_path = $image_path;
 
             $model->save();

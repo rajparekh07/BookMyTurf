@@ -6,6 +6,9 @@ import notie from 'notie'
 import NProgress from 'nprogress';
 import 'materialize-css';
 
+import '../cards/card.js'
+// import '../cards/jquery.card.js'
+
 
 global.$ = global.jQuery = jQuery;
 

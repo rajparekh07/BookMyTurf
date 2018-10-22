@@ -7,7 +7,7 @@ use Exception;
 
 class BaseException extends Exception
 {
-    protected $state;
+    private $state;
     public function __construct($errors)
     {
         $this->message = $errors;
@@ -22,7 +22,11 @@ class BaseException extends Exception
         $this->state = $state;
     }
 
-    protected static function getInstance($class, $args, $state) {
+    public function getState() {
+        return $this->state;
+    }
+
+    protected static function getInstance($class, $state, $args) {
         $instance = new $class($args);
         $instance->setState($state);
         return $instance;

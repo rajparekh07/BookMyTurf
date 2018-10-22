@@ -8,6 +8,12 @@ class Rating extends Model
 {
     protected $table = "ratings";
 
+    protected $appends = ['user_name'];
+
+    public function getUserNameAttribute() {
+        return $this->user->name;
+    }
+
     public function user()
     {
         return $this->belongsTo('App\User');

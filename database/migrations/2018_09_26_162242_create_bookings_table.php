@@ -28,7 +28,8 @@ class CreateBookingsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->unsignedInteger('hours');
-            $table->timestamp('from');
+            $table->unsignedInteger('from');
+            $table->date('date');
             $table->integer('card_id')->unsigned();
             $table->foreign('card_id')
                 ->references('id')

@@ -3,7 +3,7 @@
         <transition name="fade">
             <div class="card grey darken-3 z-depth-3" v-show="show">
                 <div class="card-image activator waves-effect waves-block waves-light" >
-                    <img class="activator" :class="{ 'pointer':isDescriptionAvailable}" :src="cardData.images[0].image_path" @load="show = true" >
+                    <img class="activator" :class="{ 'pointer':isDescriptionAvailable}" :src="thumbnail" @load="show = true" >
                     <span class="activator card-title">
                         <span class="truncate">{{ cardData.name }}</span>
 
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="card-action">
-                    <a href="#" class="white-text">Book Now</a>
+                    <a :href="cardData.permalink" class="white-text">Book Now</a>
                 </div>
             </div>
 
@@ -90,6 +90,9 @@
             },
             defaultThumbnail () {
                 return 'https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7VG9DQVluOFJ4Tnc/materialdesign_principles_metaphor.png'
+            },
+            thumbnail () {
+                return this.cardData.all_images_url[0];
             }
         },
         methods : {

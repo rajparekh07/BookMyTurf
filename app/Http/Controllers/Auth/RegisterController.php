@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Turfasap\ImageHelper\ImageRepository;
 
 class RegisterController extends Controller
 {
@@ -49,9 +50,9 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'r_name' => 'required|string|max:255',
+            'r_email' => 'required|string|email|max:255|unique:users,email',
+            'r_password' => 'required|string|min:6',
         ]);
     }
 
@@ -63,10 +64,17 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $i = new ImageRepository();
+        $p = $i->getImageFromName($data['r_name']);
+
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'name' => $data['r_name'],
+            'email' => $data['r_email'],
+            'image_path' => $p,
+            'phone' => $data['r_phone'],
+            'role_id' => $data['r_role'],
+            'verified' => $data["r_role"] == 3 ? 1 : 0,
+            'password' => Hash::make($data['r_password']),
         ]);
     }
 }

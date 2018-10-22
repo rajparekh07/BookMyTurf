@@ -17,12 +17,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta name="theme-color" content="#000" />
 </head>
 <body>
     <div id="app">
         <toolbar
             name="{{ env('APP_NAME') }}"
-            auth="{!! Auth::user() !!}"
+            :auth='{!! Auth::user() ?? 0 !!}'
             getstartedurl="{{ route('getstarted') }}"
             searchurl="{{ route('turfs') }}"
         >
@@ -44,6 +45,11 @@
     <script>
         $(document).ready(function () {
             M.AutoInit();
+            var elems = document.querySelectorAll('.datepicker');
+            var options = {
+              minDate : new Date()
+            };
+            var instances = M.Datepicker.init(elems, options);
         })
     </script>
     @yield('script')

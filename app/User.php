@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'image_path', 'phone', 'role_id', 'verified'
     ];
 
     /**
@@ -27,9 +27,20 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $appends = ['image'];
 
-    public function role () {
-        return $this->hasOne('App\Model\Role');
+    public function getImageAttribute () {
+        return route('ajax-user-image-id', $this->id);
+    }
+
+    public function turfs ()
+    {
+        return $this->hasMany('App\Model\Turf');
+    }
+
+    public function role ()
+    {
+        return $this->belongsTo('App\Model\Role');
     }
 
     public function accounts ()

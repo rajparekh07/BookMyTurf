@@ -20,6 +20,8 @@ $animationDuration: 0.2s;
 // Variables
 @import 'variables';
 
+@import "./../cards/card.css";
+
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
 
@@ -86,7 +88,7 @@ input:-webkit-autofill:focus {
   -webkit-text-fill-color: white !important;
 }
 
-.select-dropdown, .validate, .prefix.active {
+.register .select-dropdown, .validate, .prefix.active {
    color: #FFF !important;
  }
 input:focus:not(.search), .validate:focus:not(.search) {
@@ -103,4 +105,8 @@ input:focus:not(.search), .validate:focus:not(.search) {
 
 .pagination li a {
   color: #FFF;
+}
+
+.datepicker-day-button, .dropdown-trigger {
+  color: #000 !important;
 }

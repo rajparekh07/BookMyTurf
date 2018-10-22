@@ -3,12 +3,11 @@
 namespace Turfasap\ModelRepository;
 
 
-use App\Model\Turf;
-use App\Model\TurfImage;
+use App\User;
 use Turfasap\Exception\ImageException;
 use Turfasap\ImageHelper\ImageRepository;
 
-class TurfRepository
+class UserRepository
 {
     private $imageRepo;
     public function __construct()
@@ -16,16 +15,8 @@ class TurfRepository
         $this->imageRepo = new ImageRepository();
     }
 
-    public function getAllTurfs () {
-        return $this->getTurfQuery()->get();
-    }
-
-    public function getTurfById ($id) {
-        return $this->getTurfQuery()->where('id', $id)->get()->first();
-    }
-
-    public function retrieveTurfImage ($id) {
-        $url = $this->getTurfImageById($id);
+    public function retrieveUserImage ($id) {
+        $url = $this->getUserImageById($id);
 
         try {
 
@@ -39,12 +30,7 @@ class TurfRepository
 
     }
 
-    public function getTurfImageById ($id) {
-        return TurfImage::find($id)->image_path;
+    public function getUserImageById ($id) {
+        return User::find($id)->image_path;
     }
-
-    private function getTurfQuery() {
-        return Turf::with(['facilities', 'ratings', 'user']);
-    }
-
 }

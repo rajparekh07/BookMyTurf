@@ -10,6 +10,7 @@ $factory->define(App\Model\Turf::class, function (Faker $faker) {
         'price' => collect([500, 1000, 1500, 2000, 2500])->random(1)->first(),
         'from' => 7,
         'to' => 23,
+        "user_id" => 2,
         'address' => $faker->address,
         'longitude' => $faker->longitude,
         'latitude' => $faker->latitude,

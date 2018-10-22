@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
 
-            <div class="col s6">
+            <div class="col s12 m12 l12">
                 <h3>
                     <transition name="fade"
                                 mode="out-in"
                     >
                     <span v-if="!isSearching" key="normal">
-                        All Turfs
+                        Browse Turfs
                     </span>
                         <span v-else key="searching">
                         Search Turfs
@@ -70,7 +70,7 @@
 
     export default {
         mixins : [PaginateMixin, SearchMixin, SortMixin],
-        props: ['url', 'search_query'],
+        props: ['url', 'search_query', 'image_route'],
         components : {
             materialCardContainer
         },
@@ -94,12 +94,14 @@
                         window.NProgress.done();
                         this.$refs.cardContainer.cardArray = response.data.data;
                         this.setPaginateData(response.data);
+                        window.history.pushState('turfs', 'Title', 'turfs');
                     })
                     .catch( (error) => window.error(error) );
             },
             onButtonClicked () {
 
-            }
+            },
+
         }
     }
 </script>

@@ -15,6 +15,9 @@ import Footer from './components/Footer.vue'
 import Toolbar from './components/Toolbar.vue'
 
 import Turfs from './components/Turfs/Container.vue'
+import Permalink from './components/Permalink/Turf.vue'
+import Book from './components/Booking/Book.vue'
+import Payment from './components/Payment/Confirm.vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28,6 +31,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('foot', Footer);
 Vue.component('toolbar', Toolbar);
 Vue.component('turfs', Turfs);
+Vue.component('permalink', Permalink);
+Vue.component('book', Book);
+Vue.component('payment', Payment);
 
 const app = new Vue({
     el: '#app'

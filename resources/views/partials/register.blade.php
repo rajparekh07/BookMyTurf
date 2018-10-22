@@ -25,13 +25,43 @@
                 </div>
             </div>
             <div class="row white-text" style="margin-bottom: 0">
-                <div class="input-field col s12">
+                <div class="input-field col s12 register">
                     <select name="r_role" id="r_role">
-                        @foreach(App\Model\Role::all() as $role)
+                        @foreach(App\Model\Role::where('id', '<>','1')->get() as $role)
                             <option value="{{ $role->id }}"> {{ $role->name }} </option>
                         @endforeach
                     </select>
                 </div>
+            </div>
+            <div class="row">
+                @if ($errors->has('r_name'))
+                    <div class="card-panel red">
+                    <span>
+                         <p>{{ $errors->first('r_name') }}</p>
+                    </span>
+                    </div>
+                @endif
+                    @if ($errors->has('r_email'))
+                    <div class="card-panel red">
+                    <span>
+                         <p>{{ $errors->first('r_email') }}</p>
+                    </span>
+                    </div>
+                @endif
+                    @if ($errors->has('r_phone'))
+                    <div class="card-panel red">
+                    <span>
+                         <p>{{ $errors->first('r_phone') }}</p>
+                    </span>
+                    </div>
+                @endif
+                @if ($errors->has('r_password'))
+                    <div class="card-panel red">
+                    <span>
+                         <p>{{ $errors->first('r_password') }}</p>
+                    </span>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="card-action right-align">
