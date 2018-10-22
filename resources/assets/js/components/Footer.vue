@@ -54,6 +54,9 @@
                         <a class="white-text icon" v-for="icon in icons"> <i :class="icon"></i></a>
 
                     </div>
+                    <div class="white-text">
+                        <a href="/about">About Us</a>
+                    </div>
                 </div>
             </div>
         </div>
