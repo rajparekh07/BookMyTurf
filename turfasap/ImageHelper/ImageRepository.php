@@ -40,7 +40,11 @@ class ImageRepository {
     }
 
     private function generateName($name) {
-        return 'app/image/' . sha1($name) . '.png';
+        return 'app'.DIRECTORY_SEPARATOR.'image'.DIRECTORY_SEPARATOR . sha1($name) . '.png';
+    }
+
+    private function generateNameWindows($name) {
+        return 'app\\image\\' . sha1($name) . '.png';
     }
 
     private function base64ToStorage($base64_string, $output_file) {

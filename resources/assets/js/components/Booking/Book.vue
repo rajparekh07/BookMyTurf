@@ -147,10 +147,11 @@
 
                 window.axios.post(`/ajax/turfs/${this.data.id}/validate`, data)
                     .then((response) => {
-                    if (response.data.success) {
-                        window.location.href = `/turfs/${this.data.id}/payment`
-                    }
-                    window.error(response.data.error)
+                        if (response.data.success) {
+                            window.location.href = `/turfs/${this.data.id}/payment`
+                        } else {
+                            window.error(response.data.error)
+                        }
                     }).catch((r) => window.error(r));
             }
         }

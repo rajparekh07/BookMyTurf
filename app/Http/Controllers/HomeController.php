@@ -23,11 +23,24 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('home');
+        $user = request()->user();
+        $data = [];
+        switch ($user->role->name) {
+            case "Administrator":
+                $data = \App\User::where('verified', 0)->get();
+                break;
+            case "Owner":
+                $data = \App\Model\Turf::where('user_id', request()->user()->id)->get();
+                break;
+            case "User":
+                $data = \App\Model\Booking::with(['turf'])->where('user_id', request()->user()->id)->latest()->get();
+                break;
+        }
+        return view('home')->with('data', $data);
     }
 
     public function turf()

@@ -110,3 +110,7 @@ input:focus:not(.search), .validate:focus:not(.search) {
 .datepicker-day-button, .dropdown-trigger {
   color: #000 !important;
 }
+
+#nprogress .bar {
+  height: 7px !important;
+}

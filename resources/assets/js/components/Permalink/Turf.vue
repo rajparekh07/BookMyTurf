@@ -7,7 +7,13 @@
                         <h3>
                             {{ data.name }}
 
+
                         </h3>
+                        <p>
+                            <span v-if="data.user.verified">
+                                (Verified By Turf ASAP)
+                            </span>
+                        </p>
                         <div class="row">
                             <div class="col l8 m8 s12">
                                 <vue-slider :data="imageSource" ref="slider"></vue-slider>
