@@ -8,7 +8,7 @@
                  v-if="!isSearching"
                  key="normal"
             >
-                <a href="#" class="nav-name">{{ name }}</a>
+                <a href="/" class="nav-name">{{ name }}</a>
 
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <a href="#" @click="setSearching(true)"  class="right sidenav-trigger hide-on-large-up"><i class="material-icons">search</i></a>
@@ -38,7 +38,7 @@
         </transition>
         <ul class="sidenav" id="mobile-demo">
 
-            <li v-if="!auth"><a>Get Started</a></li>
+            <li v-if="!auth"><a :href="getstartedurl">Get Started</a></li>
             <li v-if="auth"><a href="/home">{{ auth.name }}</a></li>
             <li v-if="auth"><a href="/logout">Logout</a></li>
         </ul>
