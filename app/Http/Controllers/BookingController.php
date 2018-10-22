@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Model\Booking;
 use App\Model\Card;
+use App\Notifications\NewTurfBooking;
+use App\User;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
@@ -107,6 +109,8 @@ class BookingController extends Controller
             $b->save();
 
 
+            User::find($user_id)->notify(new NewTurfBooking($b));
+            User::find($b->turf->user->id)->notify(new NewTurfBooking($b));
             return $this->response->success()->make();
         } else {
             return $this->response->failed()->error("Sorry, it did not work")->make();
