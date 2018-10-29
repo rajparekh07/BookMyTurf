@@ -66,8 +66,8 @@
                                     <td>₹{{ $row->price }}</td>
                                     <td>
                                         <ul>
-                                            <li><a class="btn-flat btn white" href="/home/turf/{{ $row->id }}/bookings">Bookings</a></li>
-                                            <li><a class="btn-flat btn white pointer" onclick="deleteRow('{{route('ajax-turf-id-delete', $row->id)}}')">Delete</a></li>
+                                            <li><a class="blue-text pointer" href="/home/turf/{{ $row->id }}/bookings">Bookings</a></li>
+                                            <li><a class="red-text pointer" onclick="deleteRow('{{route('ajax-turf-id-delete', $row->id)}}')">Delete</a></li>
                                         </ul>
                                     </td>
                                 </tr>
